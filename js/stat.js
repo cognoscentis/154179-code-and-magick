@@ -15,16 +15,18 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.fillText('Список результатов:', 310, 60);
 
 // Возвращает наибольшое значение из массива arr
-  var maxTime = times[0];
-  function getMaxTime(arr) {
-    for (var i = 0; i < arr.length; i++) {
-      var currentTime = arr[i];
+
+  function getMaxTime(array) {
+    var maxTime = array[0];
+    for (var i = 0; i < array.length; i++) {
+      var currentTime = array[i];
       if (maxTime < currentTime) {
         maxTime = currentTime;
       }
     }
+    return maxTime;
   }
-  getMaxTime(times);
+  var maxTime = getMaxTime(times);
 
   // Построение гистограмм
   /* Дано:
