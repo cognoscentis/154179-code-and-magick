@@ -16,17 +16,17 @@ window.renderStatistics = function (ctx, names, times) {
 
 // Возвращает наибольшое значение из массива arr
 
-  function getMaxTime(array) {
-    var maxTime = array[0];
+  function getHighestValue(array) {
+    var maxValue = array[0];
     for (var i = 0; i < array.length; i++) {
-      var currentTime = array[i];
-      if (maxTime < currentTime) {
-        maxTime = currentTime;
+      var currentValue = array[i];
+      if (maxValue < currentValue) {
+        maxValue = currentValue;
       }
     }
-    return maxTime;
+    return maxValue;
   }
-  var maxTime = getMaxTime(times);
+  var maxTime = getHighestValue(times);
 
   // Построение гистограмм
   /* Дано:
