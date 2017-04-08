@@ -50,7 +50,7 @@ function getRandomInt(min, max) {
 }
 
 function getRandomElement(array) {
-  return array[(getRandomInt(0, array.length))];
+  return array[getRandomInt(0, array.length)];
 }
 
 function createSimilarPersonsArray(array, count) {
