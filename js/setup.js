@@ -64,18 +64,18 @@ function createSimilarPersonsArray(array, count) {
   return array;
 }
 
-function createWizardTemplate(wizardData, i) {
+function createWizardTemplate(wizardData) {
   var wizardElement = similarPersonTemplate.cloneNode(true);
-  wizardElement.querySelector('.setup-similar-label').textContent = wizardData[i].name;
-  wizardElement.querySelector('.wizard-coat').style.fill = wizardData[i].coatColor;
-  wizardElement.querySelector('.wizard-eyes').style.fill = wizardData[i].eyesColor;
+  wizardElement.querySelector('.setup-similar-label').textContent = wizardData.name;
+  wizardElement.querySelector('.wizard-coat').style.fill = wizardData.coatColor;
+  wizardElement.querySelector('.wizard-eyes').style.fill = wizardData.eyesColor;
   return wizardElement;
 }
 
 function createDomWizardsList(count) {
   var fragment = document.createDocumentFragment();
   for (var i = 0; i < count; i++) {
-    fragment.appendChild(createWizardTemplate(similarPersons, i));
+    fragment.appendChild(createWizardTemplate(similarPersons[i]));
   }
   similarPersonList.appendChild(fragment);
 }
